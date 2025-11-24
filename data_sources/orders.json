@@ -1,0 +1,5 @@
+{"order_id":"o-100","user_id":1,"amount":19.5,"order_time":"2024-11-10T09:15:00","status":"paid"}
+{"order_id":"o-101","user_id":2,"amount":25.0,"order_time":"2024-11-10T11:03:00","status":"paid"}
+{"order_id":"o-102","user_id":3,"amount":-5.0,"order_time":"2024-11-10T12:45:00","status":"refunded"}
+{"order_id":"o-103","user_id":1,"amount":41.7,"order_time":"2024-11-11T08:12:00","status":"paid"}
+

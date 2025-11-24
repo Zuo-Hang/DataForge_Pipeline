@@ -1,0 +1,7 @@
+user_id,name,age,signup_dt
+1,Alice,28,2024-11-01
+2,Bob,,
+3,Charlie,35,2024-11-05
+4,Diana,22,2024-11-08
+5,Alice,28,2024-11-01
+

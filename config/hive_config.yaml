@@ -1,0 +1,7 @@
+# Hive 连接配置
+host: localhost
+port: 10000
+username: hive
+database: default
+transport: socket
+
