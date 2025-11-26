@@ -1,5 +1,6 @@
 package com.dataforge.pipeline;
 
+import com.dataforge.pipeline.analysis.DataProfiler;
 import com.dataforge.pipeline.clean.OrderCleaner;
 import com.dataforge.pipeline.clean.UserCleaner;
 import com.dataforge.pipeline.load.HiveLoader;
@@ -15,6 +16,15 @@ public final class App {
     public static void main(String[] args) {
         Path projectRoot = Path.of("").toAbsolutePath();
         DataPaths paths = new DataPaths(projectRoot);
+
+        // 可选：先做一次原始数据 profiling，帮助理解字段与分布
+        try {
+            DataProfiler profiler = new DataProfiler(paths);
+            profiler.profileUsers();
+            profiler.profileOrders();
+        } catch (Exception e) {
+            System.err.println("数据 Profiling 失败，不影响后续 ETL: " + e.getMessage());
+        }
 
         UserCleaner userCleaner = new UserCleaner(paths);
         List<UserRecord> users = userCleaner.clean();
